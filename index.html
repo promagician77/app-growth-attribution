@@ -1,0 +1,749 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Install and purchase tracking, Google, Meta and Apple Search Ads, first campaigns and push, scoped to ship inside one App Store build before the December sale.">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>Install to Revenue</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f7f8fa; --panel:#ffffff; --panel2:#f1f3f7;
+  --fg:#13171f; --fg2:#4d5566; --fg3:#78819a;
+  --line:#dfe3ec; --line2:#c8cedd;
+  --signal:#1d4ed8; --signal-soft:#e4ebfd;
+  --pulse:#4d7c0f; --pulse-soft:#eaf4d8;
+  --warn:#b4530a; --warn-soft:#fbeadb;
+  --stop:#b02020; --stop-soft:#fbe4e4;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --bg:#0c0f16; --panel:#141924; --panel2:#1b2130;
+  --fg:#eef1f7; --fg2:#a8b2c6; --fg3:#7b8599;
+  --line:#242c3c; --line2:#323c52;
+  --signal:#6b9bff; --signal-soft:#16213d;
+  --pulse:#9ed14a; --pulse-soft:#1b2614;
+  --warn:#e0893f; --warn-soft:#2e1f12;
+  --stop:#f07272; --stop-soft:#2e1515;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0c0f16; --panel:#141924; --panel2:#1b2130;
+  --fg:#eef1f7; --fg2:#a8b2c6; --fg3:#7b8599;
+  --line:#242c3c; --line2:#323c52;
+  --signal:#6b9bff; --signal-soft:#16213d;
+  --pulse:#9ed14a; --pulse-soft:#1b2614;
+  --warn:#e0893f; --warn-soft:#2e1f12;
+  --stop:#f07272; --stop-soft:#2e1515;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:15px;line-height:1.55;-webkit-text-size-adjust:100%}
+.wrap{max-width:1040px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0 56px}
+h1,h2,h3,h4{font-family:Archivo,system-ui,sans-serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(25px,5.2vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+h2{font-size:clamp(19px,3.4vw,24px);font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+h3{font-size:16px;font-weight:600;margin:22px 0 7px}
+h4{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.09em;color:var(--fg3);margin:0 0 9px}
+p{margin:0 0 12px;color:var(--fg2);max-width:68ch}
+p.lead{color:var(--fg);font-size:16px}
+a{color:var(--signal)}
+strong{color:var(--fg);font-weight:600}
+code,.mono{font-family:var(--mono);font-size:.9em}
+code{background:var(--panel2);padding:1px 5px;border-radius:4px;color:var(--fg)}
+
+header.top{padding-block:30px 16px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--signal);margin-bottom:9px}
+.sub{color:var(--fg2);margin-top:9px;max-width:62ch}
+
+.banner{display:flex;gap:10px;align-items:flex-start;background:var(--warn-soft);
+  border:1px solid var(--warn);border-left-width:3px;border-radius:7px;
+  padding:11px 13px;margin:16px 0 0;font-size:13.5px;color:var(--fg2)}
+.banner b{color:var(--fg)}
+
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);
+  border-bottom:1px solid var(--line);margin-bottom:26px;
+  padding-block:9px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav .inner{display:flex;gap:5px;min-width:max-content}
+nav button{font-family:Archivo,sans-serif;font-size:13px;font-weight:600;
+  background:transparent;color:var(--fg3);border:1px solid transparent;
+  padding:7px 12px;border-radius:7px;cursor:pointer;white-space:nowrap}
+nav button:hover{color:var(--fg);background:var(--panel2)}
+nav button[aria-selected="true"]{background:var(--signal);color:#fff;border-color:var(--signal)}
+nav button .n{font-family:var(--mono);opacity:.6;margin-right:5px;font-size:11px}
+nav button[aria-selected="true"] .n{opacity:.8}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:18px;margin:14px 0}
+.card.flush{padding:0;overflow:hidden}
+.grid{display:grid;gap:14px}
+@media(min-width:720px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}}
+.grid>*{min-width:0}
+
+.ctrl{display:flex;flex-direction:column;gap:5px;margin-bottom:15px}
+.ctrl label{font-size:12.5px;font-weight:600;color:var(--fg2);display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.ctrl label .v{font-family:var(--mono);color:var(--signal);font-size:13px}
+input[type=range]{width:100%;accent-color:var(--signal);margin:0}
+
+.stat{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:13px}
+.stat .k{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--fg3);font-weight:600}
+.stat .v{font-family:Archivo,sans-serif;font-size:27px;font-weight:700;line-height:1.15;margin-top:3px;letter-spacing:-.02em}
+.stat .n{font-size:12.5px;color:var(--fg3);margin-top:3px;line-height:1.4}
+.stat.ok .v{color:var(--pulse)}.stat.warn .v{color:var(--warn)}.stat.bad .v{color:var(--stop)}
+.stat.ok{background:var(--pulse-soft);border-color:var(--pulse)}
+.stat.warn{background:var(--warn-soft);border-color:var(--warn)}
+.stat.bad{background:var(--stop-soft);border-color:var(--stop)}
+
+.tl{display:flex;flex-direction:column;gap:2px;margin:16px 0 6px}
+.tl .row{display:grid;grid-template-columns:76px 1fr;gap:10px;align-items:center;font-size:13px}
+.tl .d{font-family:var(--mono);font-size:11.5px;color:var(--fg3);text-align:right}
+.tl .bar{height:25px;border-radius:5px;display:flex;align-items:center;padding:0 9px;
+  font-size:12px;font-weight:600;color:var(--fg);overflow:hidden;white-space:nowrap}
+
+.scale{display:flex;height:34px;border-radius:7px;overflow:hidden;border:1px solid var(--line2);margin:14px 0 6px}
+.scale div{display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:600;
+  font-family:var(--mono);color:#fff;min-width:0;overflow:hidden}
+.scale-key{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--fg3)}
+.scale-key span{display:flex;align-items:center;gap:5px}
+.dot{width:9px;height:9px;border-radius:2px;display:inline-block;flex:none}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:9px;margin:14px 0}
+.tw table{margin:0}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:Archivo,sans-serif;font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;
+  color:var(--fg3);background:var(--panel2);font-weight:600;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:0}
+td.mono{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;
+  padding:2px 7px;border-radius:5px;white-space:nowrap}
+.tag.bin{background:var(--stop-soft);color:var(--stop);border:1px solid var(--stop)}
+.tag.dash{background:var(--pulse-soft);color:var(--pulse);border:1px solid var(--pulse)}
+.tag.srv{background:var(--signal-soft);color:var(--signal);border:1px solid var(--signal)}
+
+ul.list{margin:0 0 12px;padding-left:19px;color:var(--fg2);max-width:68ch}
+ul.list li{margin-bottom:6px}
+ul.list li::marker{color:var(--signal)}
+
+blockquote{margin:14px 0;padding:12px 15px;background:var(--panel2);
+  border-left:3px solid var(--signal);border-radius:0 7px 7px 0;
+  font-size:14px;color:var(--fg2)}
+blockquote p:last-child{margin-bottom:0}
+
+.flow{display:flex;flex-direction:column;gap:9px;margin:16px 0}
+.flow .node{background:var(--panel2);border:1px solid var(--line2);border-radius:8px;padding:10px 13px;font-size:13.5px}
+.flow .node b{font-family:Archivo,sans-serif;display:block;font-size:13px;margin-bottom:2px}
+.flow .fan{display:grid;gap:9px}
+@media(min-width:620px){.flow .fan{grid-template-columns:repeat(3,1fr)}}
+.flow .arrow{font-family:var(--mono);color:var(--fg3);font-size:12px;text-align:center;line-height:1}
+
+.ck{display:flex;gap:9px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.ck:last-child{border-bottom:0}
+.ck .m{font-family:var(--mono);font-size:12px;color:var(--fg3);flex:none;width:30px}
+
+footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--fg3);display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between}
+.theme-btn{font-family:var(--mono);font-size:11.5px;background:var(--panel2);color:var(--fg3);
+  border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer}
+.theme-btn:hover{color:var(--fg)}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+<header class="top">
+  <div class="eyebrow">Prepared for your November build</div>
+  <h1>Install to Revenue</h1>
+  <p class="sub">Install and purchase tracking, Google, Meta and Apple Search Ads, first campaigns
+  and push, scoped to ship inside one App Store build before the December sale.</p>
+  <div class="banner">
+    <span aria-hidden="true">&#9888;</span>
+    <div><b>Every number on this page is a design target, a published platform limit, or a
+    worked example with its assumptions on screen.</b> None of it is your production data,
+    which I have not seen. The calculators are models you can move, not forecasts.</div>
+  </div>
+</header>
+
+<nav aria-label="Sections"><div class="inner" id="tabs"></div></nav>
+
+<!-- 1 -->
+<section id="p-clock">
+  <h2>The build clock</h2>
+  <p class="lead">Three of the four items in your brief ship only inside an App Store and Play
+  build. Campaigns are the only one you can switch on from a dashboard.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>Your item</th><th>Lives in</th><th>New build</th></tr></thead>
+    <tbody>
+      <tr><td>Install and purchase tracking</td><td>App codebase</td><td><span class="tag bin">required</span></td></tr>
+      <tr><td>Connect to Google, Meta, Search Ads</td><td>SDK in app, then dashboard linking</td><td><span class="tag bin">required</span></td></tr>
+      <tr><td>Build the first campaigns</td><td>Ad platform dashboards</td><td><span class="tag dash">no build</span></td></tr>
+      <tr><td>Push notifications working</td><td>APNs and FCM registration, consent UI</td><td><span class="tag bin">required</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="card">
+    <h4>Move the submission date</h4>
+    <div class="grid two">
+      <div>
+        <div class="ctrl">
+          <label for="s-submit"><span>Binary submitted</span><span class="v" id="o-submit">Fri 20 Nov</span></label>
+          <input type="range" id="s-submit" min="6" max="30" step="1" value="20">
+        </div>
+        <div class="ctrl">
+          <label for="s-half"><span>Update adoption half-life</span><span class="v" id="o-half">7 days</span></label>
+          <input type="range" id="s-half" min="3" max="21" step="1" value="7">
+        </div>
+        <p style="font-size:12.5px;color:var(--fg3);margin:0">
+        The half-life is the number of days for half your active base to move onto a new build.
+        It is a property of your users, not of this plan. Set it from your own history if you
+        know it. Seven days is a common figure and is the default here.</p>
+      </div>
+      <div class="grid" style="gap:10px">
+        <div class="stat" id="st-headroom"><div class="k">Review headroom</div><div class="v">-</div><div class="n">-</div></div>
+        <div class="stat" id="st-adopt"><div class="k">Base on the instrumented build, 1 Dec</div><div class="v">-</div><div class="n">-</div></div>
+      </div>
+    </div>
+    <div class="tl" id="tl"></div>
+  </div>
+
+  <h3>Why approval day is not measurement day</h3>
+  <p>Your app is already live, so on release day three things are true at once.</p>
+  <ul class="list">
+    <li>Users who <strong>update</strong> are not installs. They carry no campaign attribution,
+    because there was no ad click. Counting them in a cost-per-install denominator makes every
+    channel look better than it is.</li>
+    <li>Users who <strong>install fresh</strong> from that day are fully measurable.</li>
+    <li>Users who <strong>never update</strong> are invisible to the new events entirely.</li>
+  </ul>
+  <p>So the readable paid cohort starts at zero on release day and grows. A build approved on
+  1 December gives you a thin December and a good January, which is the wrong way round for a
+  December to January sale.</p>
+</section>
+
+<!-- 2 -->
+<section id="p-events" hidden>
+  <h2>Six events, one dispatch layer</h2>
+  <p class="lead">Your app fires an event once. One layer fans it out. Feature code never
+  imports an ad SDK.</p>
+
+  <div class="flow">
+    <div class="node"><b>Feature code</b>Calls <code>MarketingEvents.log(.trialStart(...))</code>. Knows nothing about Google, Meta or Apple.</div>
+    <div class="arrow">&#9660;</div>
+    <div class="node" style="border-color:var(--signal);background:var(--signal-soft)">
+      <b>Dispatch layer, one file</b>Holds every platform name mapping and every required parameter.
+      A platform rename is a one-file change.</div>
+    <div class="arrow">&#9660;</div>
+    <div class="fan">
+      <div class="node"><b>Google</b>Through Firebase, conversions imported into Google Ads from the linked property.</div>
+      <div class="node"><b>Meta</b>Meta SDK with value and currency populated, mapped in Aggregated Event Measurement.</div>
+      <div class="node"><b>Apple Search Ads</b>No client event. Attribution arrives from the AdServices token resolved server side.</div>
+    </div>
+  </div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Event</th><th>Fires</th><th>From</th><th>Why a marketer needs it</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">app_install_first_open</td><td>First launch of a fresh install</td><td><span class="tag bin">client</span></td><td>The denominator under every cost-per-install figure</td></tr>
+      <tr><td class="mono">onboarding_complete</td><td>User reaches the main screen</td><td><span class="tag bin">client</span></td><td>Earliest quality signal, and it lands inside the 0 to 2 day iOS window</td></tr>
+      <tr><td class="mono">trial_start</td><td>Store confirms a trial</td><td><span class="tag srv">server</span></td><td>What Google and Meta optimise toward in week one</td></tr>
+      <tr><td class="mono">purchase</td><td>Receipt verified server side</td><td><span class="tag srv">server</span></td><td>Revenue. Never fired client side only</td></tr>
+      <tr><td class="mono">subscription_renewed</td><td>Renewal notification</td><td><span class="tag srv">server</span></td><td>Separates real lifetime value from first month value</td></tr>
+      <tr><td class="mono">refund</td><td>Store confirms money returned</td><td><span class="tag srv">server</span></td><td>Stops your reports counting revenue you gave back</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Why purchases are dispatched from your server</h3>
+  <p>A device-fired purchase event is trivially spoofable, and a paid campaign optimising toward
+  a spoofable event will reliably go and find the people who spoof it. Purchases are verified
+  against Apple and Google first, written to your own ledger, then dispatched.</p>
+  <p>That ledger, not a dashboard, is the number you reconcile against when the sale ends.</p>
+
+  <h3>The refund path, which is the step everyone skips</h3>
+  <p>Apple sends a <code>CONSUMPTION_REQUEST</code> when a refund is opened and a
+  <code>REFUND</code> or <code>REFUND_DECLINED</code> with the outcome, through App Store Server
+  Notifications V2. Google Play has an equivalent through Real-time Developer Notifications.
+  Without that endpoint, your December return on ad spend reports revenue that went back to the
+  customer in January.</p>
+  <p>Google accepts a refund event. Meta has no refund event at all, so that correction is
+  applied in the reporting layer instead.</p>
+</section>
+
+<!-- 3 -->
+<section id="p-windows" hidden>
+  <h2>The iOS window closes on day two</h2>
+  <p class="lead">Apple's privacy-preserving attribution does not stream events. It batches them
+  into fixed windows measured from install, and only the first one can carry a detailed value.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>Window</th><th>Days after install</th><th>What the postback can carry</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">1</td><td class="mono">0 to 2</td><td>Fine conversion value, 0 to 63, if install volume clears Apple's anonymity threshold</td></tr>
+      <tr><td class="mono">2</td><td class="mono">3 to 7</td><td>Coarse value only: low, medium or high</td></tr>
+      <tr><td class="mono">3</td><td class="mono">8 to 35</td><td>Coarse value only</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="card">
+    <h4>Where does your trial conversion land</h4>
+    <div class="ctrl">
+      <label for="s-trial"><span>Free trial length</span><span class="v" id="o-trial">7 days</span></label>
+      <input type="range" id="s-trial" min="1" max="30" step="1" value="7">
+    </div>
+    <div class="scale" id="sc"></div>
+    <div class="scale-key">
+      <span><i class="dot" style="background:var(--pulse)"></i>Window 1, fine value</span>
+      <span><i class="dot" style="background:var(--warn)"></i>Window 2, coarse</span>
+      <span><i class="dot" style="background:var(--stop)"></i>Window 3, coarse</span>
+    </div>
+    <div class="grid two" style="margin-top:14px">
+      <div class="stat" id="st-win"><div class="k">Conversion lands in</div><div class="v">-</div><div class="n">-</div></div>
+      <div class="stat" id="st-fine"><div class="k">Revenue detail possible</div><div class="v">-</div><div class="n">-</div></div>
+    </div>
+  </div>
+
+  <h3>What we do about it</h3>
+  <ul class="list">
+    <li><strong>Encode a predictor, not the outcome.</strong> The conversion value set inside the
+    first 48 hours carries the signals that correlate with converting: onboarding finished, first
+    workout logged, paywall reached, trial started. The campaign optimises toward a leading
+    indicator that fits inside the window. On iOS this is the whole game.</li>
+    <li><strong>Consider a shorter trial for paid traffic only.</strong> A 3 day trial converts
+    inside window 1. That is a commercial decision and it moves conversion rate as well as
+    measurement, so it stays yours. Worth modelling in November instead of discovering in
+    January. Organic users keep the longer trial.</li>
+    <li><strong>Keep a server-side truth table.</strong> Your own database knows exactly which
+    install converted and when. Attribution is lossy on iOS. Blended reporting against a holdout
+    answers the question you actually have, which is whether the spend is working.</li>
+  </ul>
+
+  <h3>Android is not the same</h3>
+  <p>Google Play's Install Referrer returns the full referrer URL with click and install-begin
+  timestamps, and it stays available for 90 days. Android attribution is comparatively complete.
+  A blended iOS and Android number will hide a problem that exists on only one of them, so the
+  reports separate the two platforms from day one.</p>
+
+  <h3>One more platform limit worth knowing in advance</h3>
+  <p>Meta caps how many iOS campaigns a single app can run at once. The plan uses four campaigns
+  deliberately, not fifteen, and low-volume campaigns also lose conversion detail to Apple's
+  anonymity threshold. Splitting a sale budget across many small campaigns can return less usable
+  data than the same spend concentrated.</p>
+</section>
+
+<!-- 4 -->
+<section id="p-push" hidden>
+  <h2>Push is a build item</h2>
+  <p class="lead">Two of the requirements for promotional push are screens, not settings. Both
+  ship in the November build.</p>
+
+  <h4>App Store Review Guideline 4.5.4, quoted from Apple's published guidelines</h4>
+  <blockquote><p>Push Notifications must not be required for the app to function, and should not
+  be used to send sensitive personal or confidential information. Push Notifications should not
+  be used for promotions or direct marketing purposes unless customers have explicitly opted in
+  to receive them via consent language displayed in your app's UI, and you provide a method in
+  your app for a user to opt out from receiving such messages.</p></blockquote>
+
+  <p>That sentence contains two separate build requirements. The iOS system permission prompt
+  satisfies neither of them: it asks whether notifications may be delivered and says nothing
+  about promotions.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>Layer</th><th>Who asks</th><th>Governs</th><th>Reversible in app</th></tr></thead>
+    <tbody>
+      <tr><td>iOS system authorization</td><td>Apple's prompt</td><td>Whether any notification is delivered</td><td>No. The user has to go to Settings</td></tr>
+      <tr><td>Your marketing consent</td><td>Your own screen</td><td>Whether promotional sends are allowed</td><td>Yes, through your settings toggle</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>The prompt is a one-shot resource</h3>
+  <p>On iOS the system prompt can be shown once. If the user declines, you cannot show it again
+  from inside the app. Prompting on first launch, before anyone has a reason to want
+  notifications, spends your single attempt at the moment it is worth least.</p>
+  <p>What ships instead is a short priming screen with a clear reason, triggered after a first
+  completed workout. The system prompt is shown only to users who say yes on the priming screen.
+  Users who say no keep their system prompt unspent and can be asked again later.</p>
+
+  <div class="card">
+    <h4>December reach, three numbers decided in November</h4>
+    <div class="grid two">
+      <div>
+        <div class="ctrl"><label for="s-a"><span>Base on the instrumented build</span><span class="v" id="o-a">60%</span></label><input type="range" id="s-a" min="10" max="100" step="5" value="60"></div>
+        <div class="ctrl"><label for="s-b"><span>Granted system permission</span><span class="v" id="o-b">55%</span></label><input type="range" id="s-b" min="10" max="100" step="5" value="55"></div>
+        <div class="ctrl"><label for="s-c"><span>Granted your marketing consent</span><span class="v" id="o-c">85%</span></label><input type="range" id="s-c" min="10" max="100" step="5" value="85"></div>
+      </div>
+      <div class="grid" style="gap:10px">
+        <div class="stat ok" id="st-reach"><div class="k">Reachable with a promotional push</div><div class="v">-</div><div class="n">-</div></div>
+        <div class="stat" id="st-lost"><div class="k">Unreachable on 1 December</div><div class="v">-</div><div class="n">-</div></div>
+      </div>
+    </div>
+    <p style="font-size:12.5px;color:var(--fg3);margin:12px 0 0">Placeholder values, shown to
+    demonstrate the shape. The same build shipped two weeks later, with a first-launch prompt,
+    moves the first two sliders down together.</p>
+  </div>
+
+  <h3>Delivery plumbing</h3>
+  <ul class="list">
+    <li>APNs auth key, a <code>.p8</code>, uploaded once. Preferred over certificates, which
+    expire annually and will choose a weekend to do it.</li>
+    <li>FCM's legacy server-key API is retired. Sends go through the HTTP v1 endpoint with a
+    service account and hourly OAuth tokens, so the sending credential is no longer a string
+    anyone can paste into a tool.</li>
+    <li>Device tokens rotate. A send list that is never refreshed quietly decays, so the runbook
+    covers the refresh job and what a rising invalid-token rate means.</li>
+  </ul>
+</section>
+
+<!-- 5 -->
+<section id="p-channels" hidden>
+  <h2>Three channels, what each one needs</h2>
+  <p class="lead">Split by where the work happens, because that decides what can still be
+  changed after the binary is locked.</p>
+
+  <div class="grid three">
+    <div class="card" style="margin:0">
+      <h4>Google</h4>
+      <p style="font-size:13.5px">Events through Firebase. Conversions imported into Google Ads
+      from the linked property, so no second SDK is added for the ads side.</p>
+      <ul class="list" style="font-size:13px">
+        <li>Linking is reversible, so it is done in week one</li>
+        <li>Imported conversions lag by about a day on first appearance</li>
+        <li>App campaigns need seven to ten stable days before their numbers mean anything</li>
+      </ul>
+    </div>
+    <div class="card" style="margin:0">
+      <h4>Meta</h4>
+      <p style="font-size:13.5px">Meta SDK in the binary. Value and currency must be populated or
+      a Purchase is dropped on arrival.</p>
+      <ul class="list" style="font-size:13px">
+        <li>Aggregated Event Measurement ranking is set once, correctly</li>
+        <li>Reordering that list resets a 72 hour window every time</li>
+        <li>Domain and app verification is the slowest step, so it starts first</li>
+        <li>iOS campaigns per app are capped, so the plan uses four</li>
+      </ul>
+    </div>
+    <div class="card" style="margin:0">
+      <h4>Apple Search Ads</h4>
+      <p style="font-size:13.5px">Reports downloads in its own dashboard with no SDK at all.
+      Attributing an in-app purchase back to a campaign is what needs code.</p>
+      <ul class="list" style="font-size:13px">
+        <li>AdServices token read on first open</li>
+        <li>Token expires 24 hours after install</li>
+        <li>Resolved server side with retries, never on device</li>
+        <li>A 404 on the first attempt is normal, not a bug</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Why the token is resolved on your server</h3>
+  <p>The attribution token has a 24 hour lifetime. Resolving it on the device means a user who
+  opens the app once and then goes offline for a day becomes permanently unattributable. Posting
+  the token to your server on first open and resolving it there, with retries, keeps that user.</p>
+
+  <h3>Accounts</h3>
+  <p>Every account is created under your company. I am added as a user and can be removed in one
+  click without anything breaking. There is no account in this project that lives under my name.
+  This is worth checking with anyone you hire, because it is the most common way a handoff turns
+  out not to be a handoff.</p>
+</section>
+
+<!-- 6 -->
+<section id="p-january" hidden>
+  <h2>January is a different job</h2>
+  <p class="lead">For an exercise app, the first two weeks of January are the largest revenue
+  event of the year. Install attribution cannot see any of it.</p>
+
+  <p>Those users are not new installs. They installed months ago, stopped opening the app, and
+  came back because it is January. There is no ad click to attribute and no install to count.
+  Every acquisition dashboard you own will report that revenue as organic, or as belonging to
+  whichever campaign happens to be running.</p>
+
+  <h3>How it gets measured instead</h3>
+  <ul class="list">
+    <li><strong>Define the lapsed segment</strong> from <code>session_start</code>. No session in
+    30 days is a reasonable starting line, and it is why that event is in the spec even though no
+    ad platform receives it.</li>
+    <li><strong>Hold out 10% at random</strong> and send them nothing at all.</li>
+    <li><strong>Compare the two groups</strong> on return rate and on revenue. That difference is
+    the only honest number for what push is worth to you.</li>
+    <li><strong>Report it separately</strong> from acquisition, always. Blending re-engagement
+    revenue into a campaign report is the fastest way to conclude that a channel works when it
+    does not.</li>
+  </ul>
+
+  <p>Re-engagement ads on iOS are click-through only, so expect thin view-through data there and
+  do not read its absence as the campaign failing.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>Window</th><th>What you are buying</th><th>Measured by</th></tr></thead>
+    <tbody>
+      <tr><td>Late November</td><td>Installs before the sale, at pre-holiday prices</td><td>Install attribution, normally</td></tr>
+      <tr><td>December sale</td><td>Conversion of a warm base</td><td>Server ledger, refund adjusted</td></tr>
+      <tr><td>January</td><td>Return of users you already had</td><td>Holdout, not attribution</td></tr>
+    </tbody>
+  </table></div>
+  <p>Three windows, three different questions, three different ways of answering them. A single
+  blended return-on-ad-spend number across all three is not a measurement, and it is the number
+  most dashboards will offer you by default.</p>
+</section>
+
+<!-- 7 -->
+<section id="p-handoff" hidden>
+  <h2>Self-managing after handoff</h2>
+  <p class="lead">The test the runbook has to pass: someone on your team who was in none of our
+  calls can run the December sale from the document alone.</p>
+
+  <div class="grid three">
+    <div class="card" style="margin:0;border-color:var(--pulse)">
+      <h4 style="color:var(--pulse)">Safe to change</h4>
+      <ul class="list" style="font-size:13px;margin:0">
+        <li>Daily budgets within the stated bands</li>
+        <li>Pausing a campaign that is clearly losing money</li>
+        <li>Ad creative and copy</li>
+        <li>Push copy, timing and segments</li>
+        <li>Adding a keyword to Search Ads</li>
+      </ul>
+    </div>
+    <div class="card" style="margin:0;border-color:var(--warn)">
+      <h4 style="color:var(--warn)">Ask first</h4>
+      <ul class="list" style="font-size:13px;margin:0">
+        <li>Changing the optimisation event on a live campaign</li>
+        <li>Reordering the Meta event priority list</li>
+        <li>Anything that renames an event or parameter</li>
+        <li>Adding a new ad platform SDK</li>
+      </ul>
+    </div>
+    <div class="card" style="margin:0;border-color:var(--stop)">
+      <h4 style="color:var(--stop)">Never without a developer</h4>
+      <ul class="list" style="font-size:13px;margin:0">
+        <li>Editing the event dispatch layer</li>
+        <li>Changing how a purchase is verified</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>The weekly routine, about 30 minutes</h3>
+  <div class="card">
+    <div class="ck"><span class="m">01</span><div>Open the one report. Not the three dashboards.</div></div>
+    <div class="ck"><span class="m">02</span><div>Read Android and iOS separately. They are not comparable.</div></div>
+    <div class="ck"><span class="m">03</span><div>Compare spend against refund-adjusted revenue, never gross.</div></div>
+    <div class="ck"><span class="m">04</span><div>Change at most one thing per campaign per week.</div></div>
+  </div>
+  <p>Step four is the one that gets broken. Google App campaigns and Meta both need roughly a
+  week of stable conditions before their output means anything. Daily budget edits during a two
+  week sale produce a campaign that never leaves the learning phase and a report nobody can read.</p>
+
+  <h3>Three things to say out loud before January</h3>
+  <ul class="list">
+    <li><strong>The platforms will disagree with each other and with your bank.</strong> Each one
+    claims conversions it believes it caused, and some of those overlap. The reconciliation sheet
+    shows the size of gap that is normal.</li>
+    <li><strong>iOS data arrives late and coarse.</strong> A campaign that looks dead on day two
+    can read perfectly well on day eight.</li>
+    <li><strong>Your server ledger is the truth.</strong> Ad platforms are for steering. The
+    ledger is for counting.</li>
+  </ul>
+  <p>I answer questions on what was built, at no charge, for fourteen days after the handoff
+  session. That covers anything delivered that does not behave the way it is documented.</p>
+</section>
+
+<!-- 8 -->
+<section id="p-plan" hidden>
+  <h2>Four weeks, 90 hours, four gates</h2>
+  <p class="lead">Dates are real November 2026 dates. Hours are mine. Your developer's time sits
+  outside this number, and week 2 is the week they are needed.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>Week</th><th>Dates</th><th>Focus</th><th>Hours</th><th>Gate</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">1</td><td class="mono">2 to 6 Nov</td><td>Audit, measurement spec, accounts created, Meta verification started</td><td class="mono">20</td><td><strong>A</strong> Spec signed</td></tr>
+      <tr><td class="mono">2</td><td class="mono">9 to 13 Nov</td><td>Instrumentation with your developer, server verification, refund path, push plumbing</td><td class="mono">26</td><td></td></tr>
+      <tr><td class="mono">3</td><td class="mono">16 to 20 Nov</td><td>Sandbox QA, platform connections, campaigns staged, submission</td><td class="mono">26</td><td><strong>B</strong> QA passed<br><strong>C</strong> Submitted</td></tr>
+      <tr><td class="mono">4</td><td class="mono">23 to 27 Nov</td><td>Rollout watch, campaigns live, dashboards, runbook and training</td><td class="mono">18</td><td><strong>D</strong> Handoff</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>Week 4 is costed at 18 hours rather than 26 because US Thanksgiving falls on Thursday
+  26 November and I am assuming your team is out. I would rather subtract that day in the quote
+  than discover it in the week.</p>
+
+  <h3>The four gates</h3>
+  <div class="card">
+    <div class="ck"><span class="m">A</span><div><strong>Fri 6 Nov.</strong> Event spec signed by your developer and me. Nothing else starts before this.</div></div>
+    <div class="ck"><span class="m">B</span><div><strong>Fri 13 Nov target.</strong> Instrumented build passes QA on TestFlight and the internal track, full purchase and refund path verified in sandbox.</div></div>
+    <div class="ck"><span class="m">C</span><div><strong>Fri 20 Nov.</strong> Binary submitted to both stores. This gate cannot move, because it is what leaves two resubmission attempts before December.</div></div>
+    <div class="ck"><span class="m">D</span><div><strong>Fri 27 Nov.</strong> Campaigns live, runbook delivered, your team has made one campaign change unaided.</div></div>
+  </div>
+
+  <h3>Priced separately, only if you want them</h3>
+  <ul class="list">
+    <li>Creative production for the first ad sets, 12 hours</li>
+    <li>Web to app attribution and deferred deep links, 10 hours</li>
+    <li>TikTok Ads as a fourth channel on the same spec, 8 hours</li>
+    <li>Campaign management through the sale itself, 8 hours per week</li>
+  </ul>
+
+  <h3>The one thing that breaks this schedule</h3>
+  <p>Your developer's availability in week 2. The instrumentation is a joint sitting, not
+  something I can hand over as a pull request and walk away from. If their week 2 is already
+  committed, the right move is to say so at kickoff, pull gate B forward into week 1 and cut
+  scope somewhere else. Gate C is the one that cannot move.</p>
+</section>
+
+<footer>
+  <span>Prepared by Jeff, growth engineer, Netherlands. Built for this application.</span>
+  <button class="theme-btn" id="theme">theme: auto</button>
+</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var TABS=[
+    ["clock","Build clock"],["events","Six events"],["windows","iOS windows"],
+    ["push","Push"],["channels","Channels"],["january","January"],
+    ["handoff","Handoff"],["plan","Plan"]
+  ];
+  var nav=document.getElementById("tabs"), btns=[];
+  TABS.forEach(function(t,i){
+    var b=document.createElement("button");
+    b.type="button"; b.setAttribute("role","tab");
+    b.setAttribute("aria-selected", i===0?"true":"false");
+    b.innerHTML='<span class="n">'+(i+1)+'</span>'+t[1];
+    b.addEventListener("click",function(){show(i)});
+    nav.appendChild(b); btns.push(b);
+  });
+  function show(i){
+    TABS.forEach(function(t,j){
+      document.getElementById("p-"+t[0]).hidden = (j!==i);
+      btns[j].setAttribute("aria-selected", j===i?"true":"false");
+    });
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+
+  // ---- theme toggle -------------------------------------------------
+  var modes=["auto","light","dark"], mi=0, tb=document.getElementById("theme");
+  tb.addEventListener("click",function(){
+    mi=(mi+1)%3; var m=modes[mi];
+    if(m==="auto") document.documentElement.removeAttribute("data-theme");
+    else document.documentElement.setAttribute("data-theme",m);
+    tb.textContent="theme: "+m;
+  });
+
+  // ---- tab 1: build clock -------------------------------------------
+  var DAYNAME=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  function novDay(d){ return DAYNAME[new Date(2026,10,d).getDay()]; }
+  var sSub=document.getElementById("s-submit"), sHalf=document.getElementById("s-half");
+
+  function clock(){
+    var sub=+sSub.value, half=+sHalf.value;
+    document.getElementById("o-submit").textContent=novDay(sub)+" "+sub+" Nov";
+    document.getElementById("o-half").textContent=half+" days";
+
+    // Assume a 2 day typical review, then release. Headroom = days from
+    // submission to 1 Dec, which is how many resubmission rounds fit.
+    var toDec = 31 - sub;             // days from submit to 1 Dec
+    var rounds = Math.max(0, Math.floor((toDec - 2) / 3));
+    var liveDay = sub + 2;            // first plausible release day
+    var daysLive = Math.max(0, 31 - liveDay);
+    // Adoption: 1 - 0.5^(days/half-life)
+    var adopt = daysLive<=0 ? 0 : (1 - Math.pow(0.5, daysLive/half));
+    var pct = Math.round(adopt*100);
+
+    var h=document.getElementById("st-headroom");
+    h.querySelector(".v").textContent = toDec + " days";
+    h.querySelector(".n").textContent = rounds + (rounds===1?" resubmission attempt":" resubmission attempts")+" before 1 Dec";
+    h.className = "stat " + (rounds>=2?"ok":rounds===1?"warn":"bad");
+
+    var a=document.getElementById("st-adopt");
+    a.querySelector(".v").textContent = pct + "%";
+    a.querySelector(".n").textContent = daysLive>0
+      ? daysLive + " days of rollout before the sale opens"
+      : "Build is not live before the sale opens";
+    a.className = "stat " + (pct>=55?"ok":pct>=30?"warn":"bad");
+
+    var rows=[
+      ["2 Nov","Kickoff and audit","var(--panel2)"],
+      [sub+" Nov","Binary submitted","var(--signal-soft)"],
+      [liveDay+" Nov","Earliest release, adoption starts at zero","var(--pulse-soft)"],
+      ["26 Nov","US Thanksgiving","var(--warn-soft)"],
+      ["1 Dec","Sale opens with "+pct+"% of the base instrumented",
+        pct>=55?"var(--pulse-soft)":pct>=30?"var(--warn-soft)":"var(--stop-soft)"]
+    ];
+    document.getElementById("tl").innerHTML = rows.map(function(r){
+      return '<div class="row"><div class="d">'+r[0]+'</div>'+
+             '<div class="bar" style="background:'+r[2]+'">'+r[1]+'</div></div>';
+    }).join("");
+  }
+  sSub.addEventListener("input",clock); sHalf.addEventListener("input",clock); clock();
+
+  // ---- tab 3: conversion windows ------------------------------------
+  var sTrial=document.getElementById("s-trial");
+  function windows(){
+    var d=+sTrial.value;
+    document.getElementById("o-trial").textContent=d+(d===1?" day":" days");
+    var win = d<=2 ? 1 : d<=7 ? 2 : d<=35 ? 3 : 0;
+    var cols=[["0 to 2",3,"var(--pulse)"],["3 to 7",5,"var(--warn)"],["8 to 35",28,"var(--stop)"]];
+    document.getElementById("sc").innerHTML = cols.map(function(c,i){
+      var on = (i+1)===win;
+      return '<div style="flex:'+c[1]+';background:'+c[2]+';opacity:'+(on?1:.3)+'">'+
+             (c[1]>4||on?("W"+(i+1)):"")+'</div>';
+    }).join("");
+
+    var w=document.getElementById("st-win");
+    w.querySelector(".v").textContent = win===0 ? "Nowhere" : "Window "+win;
+    w.querySelector(".n").textContent = win===0
+      ? "Past 35 days, outside every postback window"
+      : "Day "+d+" falls in the "+cols[win-1][0]+" day window";
+    w.className = "stat " + (win===1?"ok":win===2?"warn":"bad");
+
+    var f=document.getElementById("st-fine");
+    f.querySelector(".v").textContent = win===1 ? "Yes" : "No";
+    f.querySelector(".n").textContent = win===1
+      ? "Fine value, 0 to 63, can encode a revenue band"
+      : win===0 ? "No postback carries this conversion at all"
+      : "Coarse value only: low, medium or high";
+    f.className = "stat " + (win===1?"ok":"bad");
+  }
+  sTrial.addEventListener("input",windows); windows();
+
+  // ---- tab 4: push reach --------------------------------------------
+  var ids=["a","b","c"], sl={};
+  ids.forEach(function(k){ sl[k]=document.getElementById("s-"+k); });
+  function push(){
+    var v={};
+    ids.forEach(function(k){
+      v[k]=+sl[k].value;
+      document.getElementById("o-"+k).textContent=v[k]+"%";
+    });
+    var reach = v.a/100 * v.b/100 * v.c/100;
+    var pct = Math.round(reach*1000)/10;
+    var r=document.getElementById("st-reach");
+    r.querySelector(".v").textContent = pct + "%";
+    r.querySelector(".n").textContent = "of your active base, on 1 December";
+    r.className = "stat " + (pct>=25?"ok":pct>=15?"warn":"bad");
+
+    var l=document.getElementById("st-lost");
+    l.querySelector(".v").textContent = (Math.round((100-pct)*10)/10) + "%";
+    l.querySelector(".n").textContent = "cannot be reached by a promotional send at any price";
+    l.className = "stat";
+  }
+  ids.forEach(function(k){ sl[k].addEventListener("input",push); }); push();
+})();
+</script>
+
+</body></html>
